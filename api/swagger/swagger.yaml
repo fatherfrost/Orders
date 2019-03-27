@@ -1,0 +1,85 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: Orders app
+host: localhost:10010
+basePath: /
+schemes:
+  - http
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /order/status:
+    x-swagger-router-controller: OrderController
+    get:
+      description: getOrderStatus
+      operationId: checkOrder
+      parameters:
+        - name: name
+          in: query
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Successful resoibse
+          schema:
+            $ref: "#/definitions/Response"
+  /order:
+    x-swagger-router-controller: OrderController
+    put:
+      description: cancel Order
+      operationId: cancelOrder
+      parameters:
+        - in: body
+          name: order
+          schema:
+            type: object
+            required:
+              - name
+            properties:
+              name:
+                type: string
+      responses:
+        "200":
+          description: Successful resoibse
+          schema:
+            $ref: "#/definitions/Response"
+    post:
+      description: create order
+      operationId: createOrder
+      parameters:
+        - in: body
+          name: order
+          schema:
+            type: object
+            required:
+              - name
+            properties:
+              name:
+                type: string
+      responses:
+        "200":
+          description: Successful response
+          schema:
+            $ref: "#/definitions/Response"
+  /swagger:
+    x-swagger-pipe: swagger_raw
+definitions:
+  Response:
+    type: object
+    properties:
+      success:
+        type: boolean
+      errorCode:
+        type: string
+      errorStack:
+        type: array
+        items:
+            type: object
+      message:
+        type: string
+      data:
+        type: object
