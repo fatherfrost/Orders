@@ -11,6 +11,8 @@
     "cote": "^0.19.1",
     "express": "^4.12.3",
     "mongoose": "^5.4.20",
+    "swagger": "^0.7.5",
+    "swagger-editor": "^3.6.26",
     "swagger-express-mw": "^0.1.0"
   },
   "devDependencies": {
@@ -21,6 +23,6 @@
     "start main app": "node app.js",
     "start payment service": "node PaymentService",
     "swagger": "swagger project edit",
-    "npm install": "npm install -save cote mongoose swagger-editor"
+    "npm install": "npm install -save cote mongoose swagger swagger-editor"
   }
 }
