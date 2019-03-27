@@ -21,6 +21,6 @@
     "start main app": "node app.js",
     "start payment service": "node PaymentService",
     "swagger": "swagger project edit",
-    "npm install": "npm install -save cote mongoose"
+    "npm install": "npm install -save cote mongoose swagger"
   }
 }
