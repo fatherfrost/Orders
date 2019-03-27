@@ -1,5 +1,3 @@
-# Orders
-orders
 To start the project - use npm commands: npm install, then - start main app & start payment service
 API has 3 routes: 
 GET /order/status - returns status of order by name
